@@ -1,0 +1,10 @@
+D:\Werewolf-Saga\client\WerewolfSaga\bin\Debug\WerewolfSaga.exe.config
+D:\Werewolf-Saga\client\WerewolfSaga\bin\Debug\WerewolfSaga.exe
+D:\Werewolf-Saga\client\WerewolfSaga\bin\Debug\WerewolfSaga.pdb
+D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.csproj.AssemblyReference.cache
+D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.Form1.resources
+D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.Properties.Resources.resources
+D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.csproj.GenerateResource.cache
+D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.csproj.CoreCompileInputs.cache
+D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.exe
+D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.pdb
