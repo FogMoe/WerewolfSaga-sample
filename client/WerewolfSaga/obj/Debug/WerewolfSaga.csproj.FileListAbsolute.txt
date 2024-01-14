@@ -8,3 +8,4 @@ D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.csproj.GenerateResou
 D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.csproj.CoreCompileInputs.cache
 D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.exe
 D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.pdb
+D:\Werewolf-Saga\client\WerewolfSaga\obj\Debug\WerewolfSaga.Form2.resources

@@ -53,7 +53,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(59, 6);
-            this.textBox1.MaxLength = 10;
+            this.textBox1.MaxLength = 8;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 1;
@@ -71,7 +71,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(59, 36);
-            this.textBox2.MaxLength = 30;
+            this.textBox2.MaxLength = 16;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 3;
@@ -82,7 +82,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
             this.listBox1.Items.AddRange(new object[] {
-            "房间1[标准]（0/6）"});
+            "房间1[标准]（6人）"});
             this.listBox1.Location = new System.Drawing.Point(60, 74);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(151, 52);

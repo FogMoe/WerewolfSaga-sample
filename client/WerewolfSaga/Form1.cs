@@ -34,8 +34,20 @@ namespace WerewolfSaga
             {
                 MessageBox.Show("昵称与邮箱不能为空");
             }
+            else
+            {
+                if (connecter.Connect2ServerRoom1())
+                {
+                    Form2 form2 = new Form2();
+                    
+                    form2.Show();
+                    this.Hide();
+                    
+                }
+                
+            }
             
-            connecter.Connect2ServerRoom1();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -43,11 +55,13 @@ namespace WerewolfSaga
 
         }
 
-        private void Form1_Load(object sender, EventArgs e) { 
+        private void Form1_Load(object sender, EventArgs e) 
+        { 
 
            
             string onlineRoom1Players = connecter.OnLoadConnect().ToString();
-            listBox1.Items[0] = "房间1[标准]（" + onlineRoom1Players+"/6）";
+            //listBox1.Items[0] = "房间1[标准]（" + onlineRoom1Players+"/6）";
+            listBox1.SelectedIndex = 0;
 
 
         }
