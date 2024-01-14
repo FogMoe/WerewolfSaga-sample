@@ -30,6 +30,10 @@ namespace WerewolfSaga
         {
             userName = textBox1.Text;
             userMail = textBox2.Text;
+            if(userName =="" || userMail =="")
+            {
+                MessageBox.Show("昵称与邮箱不能为空");
+            }
             
             connecter.Connect2ServerRoom1();
         }
