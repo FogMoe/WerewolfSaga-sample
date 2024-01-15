@@ -73,7 +73,7 @@ namespace WerewolfSaga
         { 
 
            
-            string onlineRoom1Players = connecter.OnLoadConnect().ToString();
+            
             
             listBox1.SelectedIndex = 0;
 
@@ -115,6 +115,11 @@ namespace WerewolfSaga
             {
                 MessageBox.Show("https://github.com/scarletkc/Werewolf-Saga");
             }
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            string onlineRoom1Players = connecter.OnLoadConnect().ToString();
         }
     }
 }
