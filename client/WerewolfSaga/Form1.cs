@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +17,7 @@ namespace WerewolfSaga
     {
         public static string userName;
         public static string userMail;
+        public static bool customServer=false;
         Connecter connecter = new Connecter();
         public Form1()
         {
@@ -30,7 +33,18 @@ namespace WerewolfSaga
         {
             userName = textBox1.Text;
             userMail = textBox2.Text;
-            if(userName =="" || userMail =="")
+            if(customServer==false)
+            {
+                Connecter.ipAddress = "127.0.0.1";
+                Connecter.port = 20100;
+            }
+            else
+            {
+                Connecter.ipAddress = textBox3.Text;
+                Connecter.port = int.Parse(textBox4.Text);
+            }
+            
+            if (userName =="" || userMail =="")
             {
                 MessageBox.Show("昵称与邮箱不能为空");
             }
@@ -60,10 +74,47 @@ namespace WerewolfSaga
 
            
             string onlineRoom1Players = connecter.OnLoadConnect().ToString();
-            //listBox1.Items[0] = "房间1[标准]（" + onlineRoom1Players+"/6）";
+            
             listBox1.SelectedIndex = 0;
 
 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(customServer==false)
+            {
+                listBox1.Visible = false;
+                textBox3.Visible = true;
+                textBox4.Visible = true;
+                customServer = true;
+            }
+            else
+            {
+                listBox1.Visible = true;
+                textBox3.Visible = false;
+                textBox4.Visible = false;
+                customServer = false;
+            }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 使用默认的浏览器打开网站
+                Process.Start("https://github.com/scarletkc/Werewolf-Saga");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("https://github.com/scarletkc/Werewolf-Saga");
+            }
         }
     }
 }

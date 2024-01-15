@@ -1,6 +1,7 @@
 import socket
 import threading
 import pickle
+import os
 from Room import Room
 
 def save_room(room, file_path='room_data.pkl'):
@@ -20,6 +21,13 @@ def load_or_create_room(file_path='room_data.pkl'):
         
         return loaded_room
 
+def delete_file(file_path):
+    if os.path.exists(file_path):
+        os.remove(file_path)
+        print(f"File {file_path} deleted successfully.")
+    else:
+        print(f"File {file_path} does not exist.")
+
 class Server:
     def __init__(self):
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -30,6 +38,7 @@ class Server:
 
 
     def start_server(self):
+        delete_file('room_data.pkl')
         self.server_socket.bind((self.host, self.port))
         self.server_socket.listen(6)
 
@@ -50,9 +59,9 @@ class Server:
             getData=data.decode()
             if getData == "OnLoad":
                 sendMessage = str(self.client_count-1)
-            elif "的客户端请求连接房间1成功!" in getData:
+            elif "的客户端请求连接房间成功!" in getData:
                 print(f"从客户端收到信息: {getData}")
-                sendMessage = "连接服务器房间1成功!"
+                sendMessage = "连接服务器房间成功!"
             elif "坐" in getData:
                 my_room = load_or_create_room()
                 user_id=getData[:getData.find("坐")]
@@ -99,7 +108,14 @@ class Server:
                     else:
                         sendMessage = my_room.seats[6]['id'] 
                 save_room(my_room, 'room_data.pkl')
-                       
+            elif "检测连接状态" in getData:
+                my_room = load_or_create_room()
+                seat_and_user_ids = []
+                for seat_number in range(1, 7):
+                    if my_room.seats[seat_number]['occupied']:
+                        seat_and_user_ids.append(f"Seat {seat_number}: {my_room.seats[seat_number]['id']}")
+                sendMessage = ', '.join(seat_and_user_ids)
+                pass           
             client_socket.send(sendMessage.encode())
             pass
         except Exception as e:
